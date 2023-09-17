@@ -6,7 +6,6 @@ from centroidtracker import CentroidTracker
 import numpy as np
 from itertools import combinations
 from math import pow, sqrt
-import imutils
 from statistics import mode
 import os
 from database.models import Video, User

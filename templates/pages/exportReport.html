@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Export Report </title>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/ExportStyle.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+
+<style>
+
+    body {font-family: "Lato", sans-serif;}
+
+    .sidebar {
+      height: 100%;
+    width: 317px;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #f1f1f1;
+    overflow-x: hidden;
+    padding-top: 36px;
+    }
+
+    .sidebar a {
+      padding: 21px 8px 6px 60px;
+  text-decoration: none;
+  font-size: 20px;
+  color: #818181;
+  display: block;
+    }
+
+    .sidebar a:hover {
+      color: black;
+    }
+
+    .main {
+      margin-left: 160px; /* Same as the width of the sidenav */
+      padding: 0px 10px;
+    }
+
+    /* @media screen and (max-height: 450px) {
+      .sidebar {padding-top: 15px;}
+      .sidebar a {font-size: 18px;}
+    } */
+    </style>
+
+  </head>
+
+  <body  style="background-color:#f1f1f1;" >
+
+
+
+<div class="sidebar">
+
+  <img src="{{ url_for('static', filename='img/Logo.jpeg')}}" class="imageLogo" >
+
+  <a href="{{url_for('homepage')}}" ><i class="fa fa-fw fa-home"></i> Display information </a>
+  <a href="{{url_for('export_report')}}"><i class="fa fa-fw fa-wrench"></i> Export report </a>
+  <a href="{{url_for('upload')}}"><i class="fa fa-fw fa-user"></i> Upload Video </a>
+  <a href="{{url_for('login_form_1')}}"><i class="fa fa-fw fa-envelope"></i> Logout </a>
+
+
+</div>
+
+      <div class="header">
+
+        <!-- Profie image -->
+        <div class="images profile"></div>
+
+        <!-- Input for searct -->
+        <div id='searchReports'>
+          <br>
+          <legend style="font-size: large; font-weight: bold;">Search by Date</legend>
+          <br>
+          <form method="GET" action="/export_report">
+            <div class='form-group'>
+              <label style="font-weight: bold;">From</label>
+              <input type="datetime-local" name="from_date" required>
+           </div>
+           <div class='form-group'>
+              <label style="font-weight: bold;">To</label>
+              <input type="datetime-local" name="to_date" position required>
+          </div>
+            <input type="submit" value="&#128269"/>
+          </form>
+          <span id="total_reports">Total number of reports is  {{ total_reports }} </span>
+        </div>
+
+
+</div>
+
+
+<div class="reportbox">
+  {% for r in reports %}
+    <div class = "rectangle">
+      <p>{{ r.upload_date }}</p>
+      <a href="{{ url_for('report_download', id=r.id) }}" download="Report 1" class = "link">
+        <button style="font-size: 27px;width: 130px;; cursor: pointer;color: green; text-decoration-line: underline;">Download</button>
+      </a>
+      <div>
+        <form onsubmit="return confirm('Do you really want to delete this report?');" class = "link" action="{{ url_for('report_delete', id=r.id)}}" method="post">
+          <button style="font-size: 27px;width: 130px;; cursor: pointer;color: red; text-decoration-line: underline;" type="submit">Delete</button>
+        </form>
+      </div>
+    </div>
+  {% endfor %}
+</div>
+
+  <script>
+    document.getElementsByClassName('profile')[0].innerText='{{ user.first_name }}'.charAt(0).toUpperCase();
+  </script>
+</body>
+</html>

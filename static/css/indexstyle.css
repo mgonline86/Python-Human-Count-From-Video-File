@@ -1,0 +1,64 @@
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+    font-size: 20px;
+}
+body{
+    width: 1333px;
+}
+
+table{
+    display: inline-block;
+    width: 45%;
+    height: 300px;
+    padding: 25px 0px;
+    background: linear-gradient(#f5eaea,#c7c2c2);
+    transform: translate(400px,100px);
+}
+/* The top button*/
+
+.topLogin{
+    transform: translate(250px, 200px);
+    width: 150px;
+    height: 35px;
+    background: #f5eaea;
+    border-radius: 20px;
+    margin: 8px 2px;
+}
+
+/* All inputs*/
+
+table input{
+    border-radius: 40px;
+    background: #f5eaea;
+    width: 120%;
+    height: 40px;
+    margin: 2px;
+    transform: translate(200px, -60px);
+}
+
+#radio{
+transform: translateX(20px);
+}
+
+/* Text for input*/
+
+label{
+
+    display: block;
+    transform: translate(165px, -60px);
+    margin: 2px 50px;
+
+
+}
+
+/* The button input*/
+
+#buttonLogin{
+    width: 115px;
+    height: 35px;
+    border-radius: 20px;
+    transform: translate(220px, -28px);
+    background: lightgreen;
+}

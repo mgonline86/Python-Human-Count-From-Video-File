@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title> SIGN UP </title>
+
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/StyleLogin.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+
+  </head>
+  <body  style="background-color:#f1f1f1;">
+
+<img src="{{ url_for('static', filename='img/Logo.jpeg')}}" width="30%" height="40%">
+
+
+
+<div class="login-page">
+<div class="form">
+  <form class="login-form" method="POST" action="/register">
+    <input type="text" name="first_name" placeholder="First Name" required/>
+    <input type="text" name="last_name"  placeholder="Last Name" required/>
+    <input type="email" name="email"  placeholder="email address" required/>
+    <input type="tel" name="phone_number"  placeholder="Phone number" pattern="[0-9]+"/>
+    <input type="password" name="password" id="password" placeholder="Password" required/>
+    <input type="password" name="confirm_password" id="confirm_password" placeholder="Confirm Password" required/>
+    <input type="submit" value="CREATE" style="color:black"/>
+  </form>
+
+</div>
+</div>
+
+<script type="text/javascript" src="{{ url_for('static', filename='js/script.js')}}"></script>
+
+  </body>
+</html>

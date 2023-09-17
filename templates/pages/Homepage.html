@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <!-- To bind The css file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/Homepagestyle.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+
+     <style>
+
+         body {font-family: "Lato", sans-serif;}
+
+        #hi_home{
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          text-align: center;
+        }
+
+         /* .sidebar {
+           height: 100%;
+         width: 317px;
+         position: fixed;
+         z-index: 1;
+         top: 0;
+         left: 0;
+         background-color: #f1f1f1;
+         overflow-x: hidden;
+         padding-top: 16px;
+         } */
+
+         .sidebar a {
+           padding: 21px 8px 6px 60px;
+       text-decoration: none;
+       font-size: 20px;
+       color: #818181;
+       display: block;
+         }
+
+         .sidebar a:hover {
+           color: black;
+         }
+
+         .main {
+           margin-left: 160px; /* Same as the width of the sidenav */
+           padding: 0px 10px;
+         }
+
+         /* @media screen and (max-height: 450px) {
+           .sidebar {padding-top: 15px;}
+           .sidebar a {font-size: 18px;}
+         } */
+         </style>
+
+</head>
+<body style="background-color:#f1f1f1;">
+
+
+
+  <div class="container">
+      <div class="sidebar">
+        <img src="{{ url_for('static', filename='img/Logo.jpeg')}}" class="imageLogo" >
+        <a href="{{url_for('homepage')}}" ><i class="fa fa-fw fa-home"></i> Display information </a>
+        <a href="{{url_for('export_report')}}"><i class="fa fa-fw fa-wrench"></i> Export report </a>
+        <a href="{{url_for('upload')}}"><i class="fa fa-fw fa-user"></i> Upload Video </a>
+        <a href="{{url_for('login_form_1')}}"><i class="fa fa-fw fa-envelope"></i> Logout </a>
+      </div>
+    <div class="content">
+      <header>
+        <!-- Profie image -->
+        <div class="images profile"></div>
+
+        <div id="infos">
+        <!-- Greating text -->
+        <span id="greating">Welcome {{ user.first_name }} {{ user.last_name }}</span>
+
+        <!-- Another textg -->
+        <span id="headerText"></span>
+
+        <!-- Total Reports -->
+        <span id="total_reports">You have <a href="{{url_for('export_report')}}">{{ total_reports }} Reports</a></span>
+      </div>
+    </header>
+        <main id="hi_home">
+      {% if file_name %}
+      <img src="{{ url_for('video_feed', file_name=file_name, file_path=file_path, file_extension=file_extension, file_size=file_size) }}" alt=""  id="imagesample">
+      {% else %}
+      <div style="font-size: xx-large;">
+        <p style="font-weight: bold;">Hi {{ user.first_name }}</p><br>
+        <p>Start uploading your video from <a href="{{url_for('upload')}}">here</a></p>
+      </div>
+      {% endif %}
+        </main>
+    </div>
+  </div>
+
+    <script>
+      let today = new Date();
+      document.getElementById("headerText").innerHTML=`Date: ${today.getDate()} / ${today.getMonth()+1} / ${today.getUTCFullYear()}`;
+      function test(){
+        if(document.getElementById('imagesample').naturalWidth===130){
+          window.location.href = "{{ url_for('export_report', file_extension=file_extension) }}";
+        }
+      }
+      if(document.getElementById('imagesample')){setInterval(test,100)};
+  document.getElementsByClassName('profile')[0].innerText='{{ user.first_name }}'.charAt(0).toUpperCase();
+    </script>
+</body>
+</html>

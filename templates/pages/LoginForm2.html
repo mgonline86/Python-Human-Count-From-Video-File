@@ -1,0 +1,83 @@
+
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>login page</title>
+
+    <!-- To bind css file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/indexstyle.css')}}">
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+
+<style>
+img {
+  display: block;
+  margin-left: 370px;
+  margin-right: 150px;
+}
+</style>
+</head>
+
+  <body>
+
+    <form>
+  <table>
+    <img src="{{ url_for('static', filename='img/Logo.jpeg')}}" style="width:50%;">
+    <tr>
+        <!-- For login button -->
+        <td>
+          <button type="submit" class="topLogin" id="buttonTop">
+            <a href="{{url_for('homepage')}}">Login</a>
+          </button>
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <!-- Input for email -->
+            <label>   Email: <span style="color: red;">*</span></label>
+            <input type="email" name="email" placeholder="  Enter your email" required id="email" >
+
+        </td>
+    </tr>
+
+    <tr>
+        <td>
+            <!-- Input for password -->
+
+            <label>  Password: <span style="color: red;">*</span></label>
+            <input type="password" name="password" placeholder="  Enter your password" required id="password">
+        </td>
+    </tr>
+
+    <td>
+        <!-- Input for remember -->
+        <input type="radio" name="remember" id="radio"  style="width: 18px;
+        transform: translate(210px, -65px);">
+
+        <span style="position: relative;
+        top: -79px;
+        left: 210px;
+        font-size: 17px;
+        color: grey;"
+        >Remember me</span>
+
+        <span style="position: absolute;
+        left: 380px;
+        top: 170px;
+
+        color: grey;
+        " > <font size="10px" ><a href="#" style="color: grey" >Forget Password ?</a></font></span>
+    </td>
+
+
+
+  </table>
+
+
+
+    </form>
+
+  </body>
+</html>

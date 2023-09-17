@@ -1,0 +1,280 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  width: 1333px;
+  height: 100vh;
+}
+
+/* For header */
+
+header {
+  background: rgb(214, 210, 210);
+  height: 130px;
+  margin: 20px 6px;
+  width: 100%;
+  position: relative;
+}
+
+div#infos {
+  height: 100%;
+  justify-content: space-between;
+  padding: 10px;
+  padding-left: 30px;
+  display: flex;
+  flex-direction: column;
+}
+/* For all images */
+
+.images {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+#imagesample {
+  max-width: 70%;
+  height: auto;
+}
+
+/* For profile image */
+
+.profile {
+  position: absolute;
+  right: 35px;
+  top: 16px;
+  margin: 5px;
+  text-align: center;
+  font-size: xx-large;
+  vertical-align: middle;
+  line-height: 60px;
+  background: white;
+  color: white;
+  /*Linear gradient... */
+  background: radial-gradient(circle at bottom center, #0b6470 15px, #022749);
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 0px 6px 5px #3ae01e;
+  box-shadow: 0px 0px 6px 5px #3ae01e;
+}
+
+/* For alert image */
+
+.alert {
+  position: absolute;
+  right: 100px;
+  top: 6px;
+  margin: 25px 7px;
+}
+
+/* For input search */
+
+#search {
+  transform: translate(495px, 25px);
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+}
+
+/* For search icon */
+
+#searchIcon {
+  transform: translate(455px, 25px);
+  border-left: 1px solid #a29d9d;
+  padding: 0px 8px;
+  display: inline-block;
+}
+
+/* For greating text */
+
+#greating {
+  font-size: 25px;
+  display: inline-block;
+}
+/* For header text */
+
+#headerText {
+  display: inline-block;
+}
+
+#total_reports {
+  display: inline-block;
+}
+
+/* For profile images*/
+
+.profileImages {
+  width: 40px;
+  border-radius: 50%;
+  margin: 4px 25px;
+}
+
+/* For above main */
+
+.cards {
+  display: inline-block;
+  width: 381px;
+  height: 80px;
+  text-align: center;
+  background: rgb(214, 210, 210);
+  margin: -3px 7px;
+}
+
+/* For circle */
+
+#circle {
+  width: 40px;
+  height: 40px;
+  transform: translate(-80px, 12px);
+  border-radius: 50%;
+  background: yellow;
+  display: inline-block;
+}
+
+/* For nav */
+
+nav {
+  width: 130px;
+  height: 595px;
+  margin: -145px 8px;
+  float: left;
+  text-align: center;
+}
+
+/* For nav text */
+
+#logoText {
+  color: red;
+  background: #c3bdbd;
+  height: 50px;
+  padding: 40px;
+}
+/* For first text in nav */
+
+.firstText {
+  margin: 20px 26px;
+  font-size: 20px;
+  color: black;
+  transform: translate(-4px, -27px);
+  position: absolute;
+}
+
+/* For socend text in nav */
+
+.secondText {
+  font-size: 23px;
+  color: black;
+  transform: translate(-27px, 521px);
+  position: absolute;
+}
+
+/* For nav text */
+
+.navText {
+  margin: 30px 0px;
+  font-size: 20px;
+}
+
+/* For nav image */
+
+nav img {
+  width: 64px;
+  height: 65px;
+  border-radius: 50%;
+  transform: translate(-39px, 525px);
+}
+
+/* For user status  */
+
+nav div {
+  transform: translate(0px, 115px);
+  text-align: center;
+}
+
+/* For user status circle */
+
+#smallCircle {
+  width: 12px;
+  height: 12px;
+  background: #70e470;
+  border-radius: 50%;
+  transform: translate(20px, 504px);
+  display: inline-block;
+}
+.imageLogo {
+  width: 314px;
+  height: 133px;
+  position: relative;
+  margin: 26px 7px 7px 7px;
+  top: -28px;
+  left: -5px;
+}
+
+/* For main */
+
+main {
+  width: 100%;
+  height: 100%;
+  margin: 20px 6px;
+  background: rgb(214, 210, 210);
+}
+
+.container {
+  width: 100%;
+  height: 70%;
+  display: flex;
+}
+
+.container .sidebar {
+  margin: 20px 0px;
+  flex: 0 1 25%;
+}
+
+.container .content {
+  flex: 0 1 75%;
+}
+
+/* .reportbox {
+  background: rgb(214, 210, 210);
+  width: 88%;
+  height: 569px;
+  margin: 15px 150px 15px 313px;
+  position: relative;
+} */
+
+.reportbox form {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 400px;
+  justify-content: center;
+}
+
+#uploadfile,
+#submitfile {
+  height: 50px !important ;
+  padding: 12px 20px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  /* transform: translate(512px, 249px); */
+}
+form p {
+  /* transform: translate(87px, 225px); */
+  color: #818181;
+  font-size: 27px;
+}
+
+#flashMessage {
+  color: white;
+  text-align: center;
+  width: 60%;
+  position: fixed;
+  background-color: rgba(221, 82, 82, 0.61);
+  z-index: 5;
+  top: 250px;
+  left: 800px;
+  transform: translate(-50%, -50%);
+}

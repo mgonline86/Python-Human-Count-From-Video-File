@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>login page</title>
+
+    <!-- To bind css file -->
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/indexstyle.css')}}">
+    <!-- Logo -->
+    <link rel="icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+    <link rel="apple-shortcut-icon" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+    <link rel="shortcut" href="{{ url_for('static', filename='img/Logo.jpeg')}}">
+
+</head>
+
+<body>
+    <form>
+        <table>
+            <tr>
+                <!-- For login button -->
+                <td> <button type="submit" class="topLogin" id="buttonTop"> Login</button> </td>
+            </tr>
+                <tr>
+                    <td>
+                        <!-- Input for email -->
+                        <label>Email: <span style="color: red;">*</span></label>
+                        <input type="email" name="email" placeholder="Enter your email" required id="email">
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <!-- Input for password -->
+                        <label>Password: <span style="color: red;">*</span></label>
+                        <input type="password" name="password" placeholder="Enter your password" required id="password">
+                    </td>
+                </tr>
+                <td>
+                    <!-- Input for remember -->
+                    <input type="radio" name="remember" id="radio"  style="width: 18px;
+                    transform: translate(13px, -30px);">
+
+                    <span style="position: absolute;
+                    top: 203px;
+                    left: 44px;">Remember me</span>  <span style="position: absolute;
+                    left: 440px;
+                    top: 200px;">Forget password ?</span>
+                </td>
+            </tr>
+            <tr>
+                <!-- another button for login  -->
+                <td> <button type="submit" id="buttonLogin"> Login</button> </td>
+            </tr>
+        </table>
+    </form>
+
+    <script>
+        var button = document.getElementById("buttonLogin"),
+        buttonTop = document.getElementById('buttonTop');
+        button.onclick = function login () {
+            open("{{url_for('homepage')}}");
+        };
+        buttonTop.onclick = function login () {
+            open("{{url_for('homepage')}}");
+        };
+    </script>
+</body>
+
+</html>

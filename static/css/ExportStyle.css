@@ -1,0 +1,160 @@
+* {
+  padding: 0px;
+  margin: 0px;
+  box-sizing: border-box;
+}
+body {
+  width: 1333px;
+}
+
+.header {
+  background: rgb(214, 210, 210);
+  width: 74.9%;
+  height: 130px;
+  margin: 20px 150px 15px 340px;
+  position: relative;
+}
+
+.reportbox {
+  background: rgb(214, 210, 210);
+  width: 74.9%;
+  height: 100%;
+  margin: 20px 150px 15px 340px;
+  padding: 5px;
+}
+
+.rectangle {
+  display: flex;
+  align-items: center;
+  align-content: space-between;
+  justify-content: space-between;
+  width: 90%;
+  height: 100px;
+  border: 1px solid #a29d9d;
+  border-radius: 15px;
+  background-color: whitesmoke;
+  padding: 11px 36px 21px 55px;
+  margin: 43px 22px 20px 32px;
+  position: relative;
+}
+
+input[type="checkbox"] {
+  transform: scale(1.8);
+}
+
+.images {
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+}
+
+.imageLogo {
+  width: 314px;
+  height: 133px;
+  position: relative;
+  margin: 26px 7px 7px 7px;
+  top: -45px;
+  left: -5px;
+}
+
+/* For profile image */
+
+.profile {
+  position: absolute;
+  right: 35px;
+  top: 16px;
+  margin: 5px;
+  text-align: center;
+  font-size: xx-large;
+  vertical-align: middle;
+  line-height: 60px;
+  background: white;
+  color: white;
+  /*Linear gradient... */
+  background: radial-gradient(circle at bottom center, #0b6470 15px, #022749);
+  background-size: cover;
+  background-position: center;
+  font-weight: bold;
+  -webkit-box-shadow: 0px 0px 6px 5px #3ae01e;
+  box-shadow: 0px 0px 6px 5px #3ae01e;
+}
+
+/* For alert image */
+
+.alert {
+  position: absolute;
+  right: 100px;
+  top: 6px;
+  margin: 25px 7px;
+}
+
+/* For input search */
+
+#search {
+  transform: translate(727px, 25px);
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+}
+
+/* input[type="date"] {
+  transform: translate(-102px, 73px);
+  background-color: whitesmoke;
+  border-color: whitesmoke;
+} */
+
+/* For search icon */
+
+#searchIcon {
+  transform: translate(674px, 26px);
+  border-left: 1px solid #a29d9d;
+  padding: 0px 8px;
+  display: inline-block;
+}
+
+/* For greating text */
+
+#greating {
+  transform: translate(164px, 50px);
+  font-size: 25px;
+  display: inline-block;
+}
+
+p {
+  font-size: 27px;
+  /* transform: translate(36px, 8px); */
+}
+
+.link {
+  /* transform: translate(79px, 28px);
+  display: inline;
+  position: absolute;
+  top: 15px;
+  right: 98px; */
+  font-size: 27px;
+  color: black;
+}
+
+/* For profile images*/
+
+.profileImages {
+  width: 40px;
+  border-radius: 50%;
+  margin: 4px 25px;
+}
+
+#searchReports {
+  width: 60%;
+  margin-left: 30px;
+}
+
+#searchReports form {
+  display: flex;
+  justify-content: space-around;
+}
+
+#total_reports {
+  position: absolute;
+  top: 100px;
+  text-align: center;
+  width: 88%;
+}
